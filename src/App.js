@@ -1,35 +1,25 @@
 import React from 'react';
 import './App.css';
+import Clock from './components/Clock';
 
 class App extends React.Component {
   constructor(props) { // construtor 
-    console.log("COMPONENT OBJECT INSTANTIATED")
+    console.log("APP COMPONENT OBJECT INSTANTIATED")
     super(props); // calling base class contructor to initialize
-    this.state = {}
+    this.state = {};
   }
 
   componentDidMount() { // function overriding of base class 
-    console.log("MOUNTED", this.state);
+    console.log("APP MOUNTED", this.state);
   }
 
   componentDidUpdate() {
-    console.log("DID UPDATE", this.state);
+    console.log("APP DID UPDATE", this.state);
   }
 
   render() { // function overriding
-    console.log("RENDER CALLED");
-    return (
-      <>
-        <h1>{this.state.name}</h1>
-        <button
-          onClick={(e) => {
-            this.setState({ "name": "sid" });
-          }}
-        >
-          CLICK
-        </button>
-      </>
-    )
+    console.log("APP RENDER CALLED");
+    return <Clock />
   }
 }
 

@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends React.Component {
+  constructor(props) { // construtor 
+    console.log("COMPONENT OBJECT INSTANTIATED")
+    super(props); // calling base class contructor to initialize
+    this.state = {}
+  }
+
+  componentDidMount() { // function overriding of base class 
+    console.log("MOUNTED", this.state);
+  }
+
+  componentDidUpdate() {
+    console.log("DID UPDATE", this.state);
+  }
+
+  render() { // function overriding
+    console.log("RENDER CALLED");
+    return (
+      <>
+        <h1>{this.state.name}</h1>
+        <button
+          onClick={(e) => {
+            this.setState({ "name": "sid" });
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          CLICK
+        </button>
+      </>
+    )
+  }
 }
 
 export default App;

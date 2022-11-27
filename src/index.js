@@ -11,7 +11,7 @@ root.render(
 );
 
 /*
-NOTE:-We Can't see webpack in this project package.json as it is dependency of "react-script package" and is present 
+NOTE:-We Can't see "webpack and babel" in this project package.json as it is dependency of "react-script package" and is present 
 in its package.json , while npm resolves the package.json recursively , it creates this dependency graph
 */
 

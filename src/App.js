@@ -19,7 +19,15 @@ class App extends React.Component {
 
   render() { // function overriding
     console.log("APP RENDER CALLED");
-    return <Clock />
+    return (
+      <>
+        {/* all these three are different and isolated Component  */}
+        {/* All these could be considered as seperate instaces/objects of a class */}
+        <Clock />
+        <Clock />
+        <Clock />
+      </>
+    )
   }
 }
 
